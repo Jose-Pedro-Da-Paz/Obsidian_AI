@@ -14,7 +14,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 
 # Caminho para os embeddings
 embeddings_file = "embeddings.pkl"
-markdown_folder = 'G:/Organizar - Obsidian/Organizar'
+markdown_folder = '' #your obsidian archives
 
 # Função para gerar embeddings
 def generate_embedding(text):
@@ -82,7 +82,7 @@ def generate_prompt(context, query):
 
 # Função para enviar a consulta para a API GROQ
 def query_groq(prompt):
-    client = Groq(api_key="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")
+    client = Groq(api_key="YOUR API KEY FROM GROQ")
     completion = client.chat.completions.create(
         model="llama3-70b-8192",  # Modelo escolhido
         messages=[{"role": "system", "content": prompt}],
